@@ -6,6 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+flask = "*"
+beautifulsoup4 = "*"
+pandas = "*"
+requests = "*"
+googleads = "*"
 
 [requires]
 python_version = "3.7"

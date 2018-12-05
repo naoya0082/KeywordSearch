@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キーワード選定自動化ツール</title>
+</head>
+<body>
+<h1>
+    <center><strong>キーワード自動選定ツール</strong></center>
+</h1>
+<h2>キーワードと検索ボリュームの入力</h2>
+<!--formタグ:入力欄-->
+<form action="{{ url_for('search_volume') }}" method="post">
+    キーワードを入力してください: <input type="text" name="keywords"><br>
+    検索ボリューム入力してください: <input type="number" name="volume"><br>
+    <br>
+    <br>
+    <center><p><input type="submit" value="確定"></p></center>
+</form>
+
+</body>
+</html>
+
+
