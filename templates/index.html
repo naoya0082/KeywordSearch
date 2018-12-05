@@ -12,13 +12,11 @@
 <!--formタグ:入力欄-->
 <form action="{{ url_for('search_volume') }}" method="post">
     キーワードを入力してください: <input type="text" name="keywords"><br>
-    検索ボリューム入力してください: <input type="number" name="volume"><br>
+    検索ボリューム入力してください: <input type="number" name="min_volume">~<input type="number" name="max_volume"><br>
     <br>
     <br>
-    <center><p><input type="submit" value="確定"></p></center>
+    <center><p><input type="submit" value="検索する"></p></center>
 </form>
 
 </body>
 </html>
-
-

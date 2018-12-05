@@ -1,10 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 """
-書くこと
-    /index にGETリクエスト が来たら
-    index.html というテンプレートをレンダリングする
+やりたいこと
+    キーワードプランナーAPIを呼び出す
+    フォームに入力したキーワード、ボリュームから条件に合致する関連キーワードを取得
+    関連キーワードの出力
+    スプレッドシートに自動保存
 """
 
 
@@ -12,6 +14,21 @@ app = Flask(__name__)
 @app.route("/search")
 def search_volume():
     return render_template("index.html")
+
+
+@app.route("/add", methods=["POST"])
+def search_keywords():
+    """
+    入力されたキーワードを検索する関数
+    """
+    # フォームに入力されたデータを取得する
+    keywords = request.form["keywords"]
+    min_volume = request.form["min_volume"]
+    max_volume = request.form["max_volume"]
+    # キーワードプランナーに情報を送信
+
+    # index()にリダイレクトする
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
